@@ -1,0 +1,24 @@
+server:
+  port: 9004
+spring:
+  application:
+    name: apigateway
+  cloud:
+    gateway:
+      routes:
+        - id: order-route-id
+          uri: lb://order-service
+          predicates:
+            - Path=/orders/**
+        - id: payment-route-id
+          uri: lb://payment-service
+          predicates:
+            - Path=/payments/**
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+    fetch-registry: true
+    register-with-eureka: true
+  instance:
+    hostname: localhost

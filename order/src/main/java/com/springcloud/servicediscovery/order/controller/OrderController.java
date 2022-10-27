@@ -34,7 +34,7 @@ public class OrderController {
         pmt.setOrderId(ordResp.getOrderId());
         pmt.setPaymentAmt(ordResp.getPrice() * ordResp.getQuantity());
 
-        Payment pmResp = restTemplate.postForObject("http://payment/payments", pmt, Payment.class);
+        Payment pmResp = restTemplate.postForObject("http://payment-service/payments", pmt, Payment.class);
         //Payment pmResp = restTemplate.postForObject("http://localhost:9002/payments", pmt, Payment.class);
         return repo.save(newOrder);
     }
