@@ -6,6 +6,8 @@
 		<module>order</module>
 		<module>payment</module>
 		<module>paymnt</module>
+		<module>eurekaServer</module>
+		<module>discovery</module>
 	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>

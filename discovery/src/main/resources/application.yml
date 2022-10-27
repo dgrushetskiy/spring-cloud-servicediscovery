@@ -1,0 +1,12 @@
+
+spring:
+  application:
+    name: eureka-discovery-server
+
+server:
+  port: 9003
+
+eureka:
+  client:
+    fetch-registry: false
+    register-with-eureka: false

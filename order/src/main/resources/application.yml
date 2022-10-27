@@ -1,6 +1,16 @@
 server:
   port: 9001
 spring:
+  application:
+    name: order
   h2:
     console:
       enabled: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9003/eureka
+    fetch-registry: true
+    register-with-eureka: true
+  instance:
+    hostname: localhost
